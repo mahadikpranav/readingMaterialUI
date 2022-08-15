@@ -1,0 +1,30 @@
+<div class="container mt-3 ">
+    <form #addform="ngForm"  (ngSubmit)="onSubmit(addform.value)">
+        <h3 id="pageTitle">Add Book/ Magazine</h3>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" ngModel name = "title" id="title" aria-describedby="title" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label>ISBN</label>
+            <input type="text" class="form-control"  ngModel name = "isbn" id="isbn" aria-describedby="isbnhelp" placeholder="ISBN">
+            <small id="isbnhelp" class="form-text text-muted">Book ISBN number</small>
+        </div>
+        <div class="form-group">
+            <label>Author Email</label>
+            <input type="email" class="form-control" ngModel name = "authorEmail"  id="authorEmail" aria-describedby="authorEmail"
+                placeholder="Author Email">
+            <small id="authorEmail" class="form-text text-muted"> Author Email Id</small>
+        </div>
+        <div class="form-group" *ngIf="!isbook">
+            <label>Published At</label>
+            <input type="publishedAt" class="form-control"  ngModel name = "publishedAt" id="publishedAt" aria-describedby="publishedAt" placeholder="publishedAt">
+        </div>
+        <div class="form-group"  *ngIf="isbook">
+            <label>Description</label>
+            <input type="text" class="form-control" ngModel name = "description" id="description" aria-describedby="Description" placeholder="Description">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
